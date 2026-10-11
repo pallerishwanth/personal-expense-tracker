@@ -1,5 +1,5 @@
 
-const API_URL = "https://YOUR-RENDER-BACKEND.onrender.com/api/transactions";
+const API_URL = "https://personal-expense-tracker-1uhl.onrender.com/api/transactions";
 
 const form = document.getElementById("transactionForm");
 const transactionList = document.getElementById("transactionList");
