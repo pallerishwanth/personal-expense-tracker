@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        
+
+<header class="page-header">
+    <h1>Personal Expense Tracker</h1>
+    <p>Track your income, expenses, and savings.</p>
+
+    <nav class="page-navigation">
+        <a href="/analytics.html" class="nav-btn analytics-btn">
+            <span>📊</span> View Analytics
+        </a>
+    </nav>
+</header>
+
+
+
+        <!-- Summary Boxes -->
+        <section class="summary">
+
+            <div class="summary-card income-card">
+                <div class="card-icon">↗</div>
+                <h3>Total Income</h3>
+                <p id="totalIncome">₹0.00</p>
+            </div>
+
+            <div class="summary-card expense-card">
+                <div class="card-icon">↘</div>
+                <h3>Total Expenses</h3>
+                <p id="totalExpenses">₹0.00</p>
+            </div>
+
+            <div class="summary-card balance-card">
+                <div class="card-icon">₹</div>
+                <h3>Balance</h3>
+                <p id="balance">₹0.00</p>
+            </div>
+
+        </section>
+
+        <!-- Add Transaction -->
+        <section class="panel">
+            <h2>Add Transaction</h2>
+
+            <form id="transactionForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="type">Transaction Type</label>
+                        <select id="type" name="type" required>
+                            <option value="INCOME">Income</option>
+                            <option value="EXPENSE">Expense</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Amount (₹)</label>
+                        <input
+                            type="number"
+                            id="amount"
+                            name="amount"
+                            min="0.01"
+                            step="0.01"
+                            placeholder="Enter amount"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <input
+                            type="text"
+                            id="category"
+                            name="category"
+                            placeholder="e.g. Food, Salary, Travel"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input
+                            type="date"
+                            id="date"
+                            name="date"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="description">Description (Optional)</label>
+                        <input
+                            type="text"
+                            id="description"
+                            name="description"
+                            placeholder="Enter transaction details"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submitButton" class="primary-btn">
+                        Add Transaction
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelEditButton"
+                        class="secondary-btn"
+                        hidden
+                    >
+                        Cancel Edit
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Category Summary -->
+        <section class="panel">
+            <h2>Expenses by Category</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Total Spent</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="categorySummary">
+                        <tr>
+                            <td colspan="2">No expenses recorded yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Transaction History -->
+        <section class="panel">
+            <h2>Transaction History</h2>
+
+            <!-- Date Filter -->
+            <div class="date-filter">
+
+                <div class="form-group">
+                    <label for="startDate">From Date</label>
+                    <input type="date" id="startDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="endDate">To Date</label>
+                    <input type="date" id="endDate">
+                </div>
+
+                <div class="filter-actions">
+                    <button
+                        type="button"
+                        id="applyFilterButton"
+                        class="primary-btn"
+                    >
+                        Apply Filter
+                    </button>
+
+                    <button
+                        type="button"
+                        id="clearFilterButton"
+                        class="secondary-btn"
+                    >
+                        Clear Filter
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Transactions Table -->
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="transactionList">
+                        <tr>
+                            <td colspan="7">Loading transactions...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <p id="statusMessage" role="status" aria-live="polite"></p>
+
+        <footer>
+            <p>Personal Expense Tracker · Manage your money wisely</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

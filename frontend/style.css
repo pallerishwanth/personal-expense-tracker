@@ -1,0 +1,405 @@
+
+/* General page styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f6fb;
+    color: #1f2937;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+/* Page header */
+.page-header {
+    margin-bottom: 28px;
+}
+
+.page-header h1 {
+    margin: 0 0 10px;
+    color: #172554;
+    font-size: 32px;
+}
+
+.page-header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 16px;
+}
+
+/* Three summary boxes */
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    padding: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
+}
+
+.summary-card h3 {
+    margin: 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.summary-card p {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+/* Summary box icons */
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Income */
+.income-card {
+    border-top: 4px solid #16a34a;
+}
+
+.income-card .card-icon {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.income-card p {
+    color: #16a34a;
+}
+
+/* Expenses */
+.expense-card {
+    border-top: 4px solid #dc2626;
+}
+
+.expense-card .card-icon {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.expense-card p {
+    color: #dc2626;
+}
+
+/* Balance */
+.balance-card {
+    border-top: 4px solid #2563eb;
+}
+
+.balance-card .card-icon {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.balance-card p {
+    color: #2563eb;
+}
+
+/* White content panels */
+.panel {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.panel h2 {
+    margin: 0 0 22px;
+    font-size: 21px;
+    color: #172554;
+}
+
+/* Form layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    min-height: 44px;
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #1f2937;
+    font-size: 15px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Form buttons */
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.primary-btn {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+}
+
+.secondary-btn {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.secondary-btn:hover {
+    background: #cbd5e1;
+}
+
+.edit-btn {
+    background: #2563eb;
+    color: #ffffff;
+    margin: 3px;
+}
+
+.edit-btn:hover {
+    background: #1d4ed8;
+}
+
+.delete-btn {
+    background: #dc2626;
+    color: #ffffff;
+    margin: 3px;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Tables */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+thead {
+    background: #f1f5f9;
+}
+
+th,
+td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+}
+
+th {
+    color: #334155;
+    font-weight: 700;
+}
+
+td {
+    color: #475569;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* Status and footer */
+#statusMessage {
+    min-height: 20px;
+    color: #475569;
+    font-size: 14px;
+}
+
+footer {
+    padding: 10px 0;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 750px) {
+    .container {
+        width: 94%;
+        margin: 22px auto;
+    }
+
+    .summary {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .summary-card {
+        padding: 20px;
+    }
+
+    .summary-card p {
+        font-size: 25px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .page-header h1 {
+        font-size: 26px;
+    }
+}
+
+/* Navigation buttons */
+.page-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+}
+
+.nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
+}
+
+/* View Analytics button */
+.analytics-btn {
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: #ffffff;
+}
+
+.analytics-btn:hover {
+    background: linear-gradient(135deg, #1d4ed8, #4338ca);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(37, 99, 235, 0.25);
+}
+
+/* Back to Dashboard button */
+.dashboard-btn {
+    background: #ffffff;
+    color: #2563eb;
+    border-color: #2563eb;
+}
+
+.dashboard-btn:hover {
+    background: #eff6ff;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(37, 99, 235, 0.15);
+}
+
+/* Keyboard accessibility */
+.nav-btn:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 4px;
+}
+
+/* Mobile layout */
+@media (max-width: 480px) {
+    .page-navigation {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
